@@ -11,7 +11,7 @@ data "http" "avm_resource_modules_csv" {
 
   retry {
     attempts     = 4
-    max_delay_ms = 1000
+    max_delay_ms = 2000
     min_delay_ms = 100
   }
 
@@ -35,7 +35,7 @@ data "http" "avm_pattern_modules_csv" {
 
   retry {
     attempts     = 4
-    max_delay_ms = 1000
+    max_delay_ms = 2000
     min_delay_ms = 100
   }
 
