@@ -9,6 +9,12 @@ data "http" "avm_resource_modules_csv" {
     } : {}
   )
 
+  retry {
+    attempts     = 4
+    max_delay_ms = 1000
+    min_delay_ms = 100
+  }
+
   lifecycle {
     postcondition {
       condition     = self.status_code == 200
@@ -26,6 +32,12 @@ data "http" "avm_pattern_modules_csv" {
       Authorization = "Bearer ${var.github_token}"
     } : {}
   )
+
+  retry {
+    attempts     = 4
+    max_delay_ms = 1000
+    min_delay_ms = 100
+  }
 
   lifecycle {
     postcondition {
